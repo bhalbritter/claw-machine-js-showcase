@@ -1,18 +1,29 @@
 import {ClawMachine} from 'clawjs'
 import {useRef, useState} from 'react'
 import {ClawMachineCommands} from 'clawjs/dist/ClawMachine'
-import {ClawSettings} from '@/interfaces/clawSettings.ts'
+import {IClawSettings} from '@/interfaces/IClawSettings.ts'
 import SettingsCard from '@/modules/settingsCard/SettingsCard.tsx'
 import {IInitialBall} from 'clawjs/dist/interfaces/InitialBall'
 
 function App() {
-	const [clawSettings, setClawSettings] = useState<ClawSettings>({
+	const [clawSettings, setClawSettings] = useState<IClawSettings>({
 		height: 500,
 		width: 500,
 		gravity: 0.8,
 		friction: 0.99,
 		groundFriction: 0.8,
 		ballRadius: 20,
+		clawSize: 25,
+		clawWidth: 5,
+		clawSpeedX: 10,
+		clawSpeedY: 5,
+		clawColor: '#808080',
+		clawBoldColor: '#000000',
+		dividerLineWidth: 70,
+		dividerLineHeight: 140,
+		dividerLineThickness: 20,
+		dividerLineBorderColor: '#808080',
+		dividerLineFillColor: '#808080',
 	})
 	const [balls, setBalls] = useState<IInitialBall[]>([
 		{
@@ -45,16 +56,18 @@ function App() {
 						gravity={clawSettings.gravity}
 						friction={clawSettings.friction}
 						groundFriction={clawSettings.groundFriction}
-						clawSize={25}
-						dividerLineWidth={70}
-						dividerLineHeight={140}
-						dividerLineThickness={20}
-						clawColor={'green'}
-						clawBoltColor={'red'}
-						clawWidth={5}
-						clawSpeedY={9}
-						clawSpeedX={20}
+						clawSize={clawSettings.clawSize}
+						clawColor={clawSettings.clawColor}
+						clawBoltColor={clawSettings.clawBoldColor}
+						clawWidth={clawSettings.clawWidth}
+						clawSpeedY={clawSettings.clawSpeedY}
+						clawSpeedX={clawSettings.clawSpeedX}
 						ballRadius={clawSettings.ballRadius}
+						dividerLineWidth={clawSettings.dividerLineWidth}
+						dividerLineHeight={clawSettings.dividerLineHeight}
+						dividerLineThickness={clawSettings.dividerLineThickness}
+						dividerLineBorderColor={clawSettings.dividerLineBorderColor}
+						dividerLineFillColor={clawSettings.dividerLineFillColor}
 					/>
 				</div>
 			</div>

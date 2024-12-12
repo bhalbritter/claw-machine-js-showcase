@@ -11,7 +11,7 @@ interface DividerLineProps {
 function DividerLine({clawSettings, setClawSettings}: DividerLineProps) {
 	return (
 		<AccordionItem value="item-4">
-			<AccordionTrigger>Divider Line Settings</AccordionTrigger>
+			<AccordionTrigger className={'font-extrabold'}>Divider Line Settings</AccordionTrigger>
 			<AccordionContent>
 				<LabeledSlider
 					value={clawSettings.dividerLineWidth}

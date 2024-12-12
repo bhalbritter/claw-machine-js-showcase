@@ -11,7 +11,7 @@ interface ClawSettingsProps {
 function ClawSettings({clawSettings, setClawSettings}: ClawSettingsProps) {
 	return (
 		<AccordionItem value="item-3">
-			<AccordionTrigger>Claw Settings</AccordionTrigger>
+			<AccordionTrigger className={'font-extrabold'}>Claw Settings</AccordionTrigger>
 			<AccordionContent>
 				<LabeledSlider
 					value={clawSettings.clawSize}

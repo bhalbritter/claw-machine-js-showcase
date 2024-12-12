@@ -43,7 +43,7 @@ function App() {
  */
 	return (
 		<div className={'flex flex-row w-full h-screen'}>
-			<div className={'flex flex-col w-full h-full'}>
+			<div className={'flex flex-col w-full h-screen'}>
 				<div>Headline</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
@@ -71,7 +71,7 @@ function App() {
 					/>
 				</div>
 			</div>
-			<div className={'w-1/4'}>
+			<div className={'w-1/4 overflow-scroll'}>
 				<SettingsCard
 					clawSettings={clawSettings}
 					balls={balls}

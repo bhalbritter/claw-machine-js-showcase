@@ -14,7 +14,7 @@ interface BallsSettingsProps {
 function BallsSettings({clawSettings, balls, setBalls, setClawSettings}: BallsSettingsProps) {
 	return (
 		<AccordionItem value="item-2">
-			<AccordionTrigger>Ball Settings</AccordionTrigger>
+			<AccordionTrigger className={'font-extrabold'}>Ball Settings</AccordionTrigger>
 			<AccordionContent>
 				<LabeledSlider
 					value={clawSettings.ballRadius}

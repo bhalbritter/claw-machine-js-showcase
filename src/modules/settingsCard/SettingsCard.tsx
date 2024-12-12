@@ -15,19 +15,17 @@ interface SettingsCardProps {
 
 function SettingsCard({clawSettings, balls, setBalls, setClawSettings}: SettingsCardProps) {
 	return (
-		<div>
-			<Accordion type="multiple">
-				<GeneralSettings clawSettings={clawSettings} setClawSettings={setClawSettings} />
-				<BallsSettings
-					balls={balls}
-					setBalls={setBalls}
-					clawSettings={clawSettings}
-					setClawSettings={setClawSettings}
-				/>
-				<ClawSettings clawSettings={clawSettings} setClawSettings={setClawSettings} />
-				<DividerLine clawSettings={clawSettings} setClawSettings={setClawSettings} />
-			</Accordion>
-		</div>
+		<Accordion type="multiple">
+			<GeneralSettings clawSettings={clawSettings} setClawSettings={setClawSettings} />
+			<BallsSettings
+				balls={balls}
+				setBalls={setBalls}
+				clawSettings={clawSettings}
+				setClawSettings={setClawSettings}
+			/>
+			<ClawSettings clawSettings={clawSettings} setClawSettings={setClawSettings} />
+			<DividerLine clawSettings={clawSettings} setClawSettings={setClawSettings} />
+		</Accordion>
 	)
 }
 

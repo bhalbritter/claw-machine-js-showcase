@@ -10,7 +10,7 @@ interface GeneralSettingsProps {
 function GeneralSettings({clawSettings, setClawSettings}: GeneralSettingsProps) {
 	return (
 		<AccordionItem value="item-1">
-			<AccordionTrigger>General Settings</AccordionTrigger>
+			<AccordionTrigger className={'font-extrabold'}>General Settings</AccordionTrigger>
 			<AccordionContent>
 				<LabeledSlider
 					value={clawSettings.width}

@@ -59,9 +59,9 @@ function App() {
 	}
 
 	return (
-		<div className={'flex flex-row w-full h-screen'}>
+		<div className={'flex  flex-col md:flex-row w-full h-screen'}>
 			<div className={'flex flex-col w-full h-screen'}>
-				<div className={'text-6xl font-bold m-1'}>Claw JS - Demo</div>
+				<div className={'text-3xl md:text-6xl font-bold m-1'}>Claw JS - Demo</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
 						alreadyDroppedBalls={[]}
@@ -109,7 +109,7 @@ function App() {
 					<Button onClick={() => handleMoveClawDown()}>Go</Button>
 				</div>
 			</div>
-			<div className={'w-1/4 overflow-scroll'}>
+			<div className={'m-1 md:m-0 md:w-1/4 overflow-scroll'}>
 				<SettingsCard
 					clawSettings={clawSettings}
 					balls={balls}

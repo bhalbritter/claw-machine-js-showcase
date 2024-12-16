@@ -4,6 +4,7 @@ import {ClawMachineCommands} from 'clawjs/dist/ClawMachine'
 import {IClawSettings} from '@/interfaces/IClawSettings.ts'
 import SettingsCard from '@/modules/settingsCard/SettingsCard.tsx'
 import {IInitialBall} from 'clawjs/dist/interfaces/InitialBall'
+import {Button} from '@/components/ui/button.tsx'
 
 function App() {
 	const [clawSettings, setClawSettings] = useState<IClawSettings>({
@@ -34,17 +35,33 @@ function App() {
 	])
 	const clawMachineRef = useRef<ClawMachineCommands>(null)
 
-	/*	const handleMoveClaw = async () => {
+	const handleMoveClawRight = async () => {
 		if (clawMachineRef.current) {
-			await clawMachineRef.current.moveClaw(100, 500, 45); // Move claw to (100, 150) with a 45-degree angle
-			await clawMachineRef.current.moveClaw(100, 100, 0, false); // Move claw to (100, 150) with a 45-degree angle
+			clawMachineRef.current.moveClawRight()
 		}
-	};
- */
+	}
+	const handleMoveClawLeft = async () => {
+		if (clawMachineRef.current) {
+			clawMachineRef.current.moveClawLeft()
+		}
+	}
+
+	const handleStopMoving = async () => {
+		if (clawMachineRef.current) {
+			clawMachineRef.current.stopMoving()
+		}
+	}
+
+	const handleMoveClawDown = async () => {
+		if (clawMachineRef.current) {
+			clawMachineRef.current.moveClawDown()
+		}
+	}
+
 	return (
 		<div className={'flex flex-row w-full h-screen'}>
 			<div className={'flex flex-col w-full h-screen'}>
-				<div>Headline</div>
+				<div className={'text-6xl font-bold m-1'}>Claw JS - Demo</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
 						alreadyDroppedBalls={[]}
@@ -69,6 +86,27 @@ function App() {
 						dividerLineBorderColor={clawSettings.dividerLineBorderColor}
 						dividerLineFillColor={clawSettings.dividerLineFillColor}
 					/>
+				</div>
+				<div className={'w-full flex justify-center gap-2 mb-2'}>
+					<Button
+						onMouseDown={() => handleMoveClawLeft()}
+						onTouchStart={() => handleMoveClawLeft()}
+						onTouchEnd={() => handleStopMoving()}
+						onMouseUp={() => handleStopMoving()}
+						onMouseLeave={() => handleStopMoving()}
+					>
+						Left
+					</Button>
+					<Button
+						onMouseDown={() => handleMoveClawRight()}
+						onTouchStart={() => handleMoveClawRight()}
+						onTouchEnd={() => handleStopMoving()}
+						onMouseUp={() => handleStopMoving()}
+						onMouseLeave={() => handleStopMoving()}
+					>
+						Right
+					</Button>
+					<Button onClick={() => handleMoveClawDown()}>Go</Button>
 				</div>
 			</div>
 			<div className={'w-1/4 overflow-scroll'}>

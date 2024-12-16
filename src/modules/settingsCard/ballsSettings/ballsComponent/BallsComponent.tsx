@@ -29,6 +29,23 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 		setBalls(filteredBalls)
 	}
 
+	const handleAddRandomBalls = () => {
+		const newBalls: IInitialBall[] = []
+		const ballsLength: number = balls.length
+
+		for (let i = 0; i < 5; i++) {
+			newBalls.push({
+				text: 'Ball ' + (ballsLength + i),
+				startX: undefined,
+				startY: undefined,
+				startXMomentum: undefined,
+				startYMomentum: undefined,
+			})
+		}
+
+		setBalls(balls.concat(newBalls))
+	}
+
 	return (
 		<div>
 			<div className={'h-72 border border-black overflow-y-scroll rounded-lg mt-3.5'}>
@@ -75,7 +92,10 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 				})}
 			</div>
 			<Popover>
-				<div className={'mt-2.5 flex justify-end mr-2.5'}>
+				<div className={'mt-2.5 flex justify-between mr-2.5'}>
+					<div className={'cursor-pointer'} onClick={() => handleAddRandomBalls()}>
+						Add 10 Random Balls
+					</div>
 					<PopoverTrigger>
 						<div>+ Add a Ball</div>
 					</PopoverTrigger>

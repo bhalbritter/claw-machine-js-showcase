@@ -36,16 +36,16 @@ function ClawSettings({clawSettings, setClawSettings}: ClawSettingsProps) {
 					setValue={(newValue) => setClawSettings({...clawSettings, clawSpeedX: newValue})}
 					label={'Claw Speed X'}
 					min={1}
-					max={60}
+					max={20}
 					step={1}
-					defaultValue={20}
+					defaultValue={10}
 				/>
 				<LabeledSlider
 					value={clawSettings.clawSpeedY}
 					setValue={(newValue) => setClawSettings({...clawSettings, clawSpeedY: newValue})}
 					label={'Claw Speed Y'}
 					min={1}
-					max={40}
+					max={20}
 					step={1}
 					defaultValue={10}
 				/>

@@ -17,7 +17,7 @@ function GeneralSettings({clawSettings, setClawSettings}: GeneralSettingsProps) 
 					setValue={(newValue) => setClawSettings({...clawSettings, width: newValue})}
 					label={'Width'}
 					min={20}
-					max={1000}
+					max={800}
 					step={10}
 					defaultValue={500}
 				/>
@@ -26,7 +26,7 @@ function GeneralSettings({clawSettings, setClawSettings}: GeneralSettingsProps) 
 					setValue={(newValue) => setClawSettings({...clawSettings, height: newValue})}
 					label={'Height'}
 					min={20}
-					max={1000}
+					max={750}
 					step={10}
 					defaultValue={500}
 				/>

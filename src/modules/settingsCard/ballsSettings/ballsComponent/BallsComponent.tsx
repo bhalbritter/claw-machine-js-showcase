@@ -94,7 +94,7 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 			<Popover>
 				<div className={'mt-2.5 flex justify-between mr-2.5'}>
 					<div className={'cursor-pointer'} onClick={() => handleAddRandomBalls()}>
-						Add 10 Random Balls
+						Add 5 Random Balls
 					</div>
 					<PopoverTrigger>
 						<div>+ Add a Ball</div>
@@ -106,7 +106,7 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 						<div className="space-y-2">
 							<h4 className="font-medium leading-none">Create Ball</h4>
 							<p className="text-sm text-muted-foreground">
-								Create a new Ball. If you enter nothing, a random value will be choosen insted
+								Create a new Ball. If you enter nothing, a random value will be chosen instead
 							</p>
 						</div>
 						<div className="grid gap-2">

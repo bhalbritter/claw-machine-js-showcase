@@ -1,10 +1,10 @@
 import {IClawSettings} from '@/interfaces/IClawSettings.ts'
 import {Accordion} from '@/components/ui/accordion'
-import {IInitialBall} from 'clawjs/dist/interfaces/InitialBall'
 import GeneralSettings from '@/modules/settingsCard/generalSettings/GeneralSettings.tsx'
 import BallsSettings from '@/modules/settingsCard/ballsSettings/BallsSettings.tsx'
 import ClawSettings from '@/modules/settingsCard/clawSettings/ClawSettings.tsx'
 import DividerLine from '@/modules/settingsCard/dividerLine/DividerLine.tsx'
+import {IInitialBall} from 'claw-machine-js/dist/interfaces/InitialBall'
 
 interface SettingsCardProps {
 	clawSettings: IClawSettings

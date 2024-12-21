@@ -1,10 +1,9 @@
-import {IInitialBall} from '../../../../../../clawjs/dist/interfaces/InitialBall'
-
 import {Popover, PopoverContent, PopoverTrigger} from '@/components/ui/popover.tsx'
 import {Input} from '@/components/ui/input.tsx'
 import {Label} from '@/components/ui/label.tsx'
 import {useState} from 'react'
 import {Button} from '@/components/ui/button.tsx'
+import {IInitialBall} from 'claw-machine-js/dist/interfaces/InitialBall'
 
 interface BallsComponentProps {
 	balls: IInitialBall[]

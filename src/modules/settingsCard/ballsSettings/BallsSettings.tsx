@@ -2,7 +2,7 @@ import {AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui
 import {LabeledSlider} from '@/components/labeled-slider.tsx'
 import {IClawSettings} from '@/interfaces/IClawSettings.ts'
 import BallsComponent from '@/modules/settingsCard/ballsSettings/ballsComponent/BallsComponent.tsx'
-import {IInitialBall} from 'clawjs/dist/interfaces/InitialBall'
+import {IInitialBall} from 'claw-machine-js/dist/interfaces/InitialBall'
 
 interface BallsSettingsProps {
 	clawSettings: IClawSettings

@@ -9,7 +9,7 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
-	base: '/claw-machine-js-showcase',
+	base: '/claw-machine-js-showcase/',
 	build: {
 		outDir: 'docs', // Change the output folder to 'docs'
 	},

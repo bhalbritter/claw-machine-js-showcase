@@ -10,7 +10,4 @@ export default defineConfig({
 		},
 	},
 	base: '/claw-machine-js-showcase/',
-	build: {
-		outDir: 'docs', // Change the output folder to 'docs'
-	},
 })

@@ -1,13 +1,13 @@
-import {ClawMachine} from 'clawjs'
 import {useRef, useState} from 'react'
-import {ClawMachineCommands} from 'clawjs/dist/ClawMachine'
 import {IClawSettings} from '@/interfaces/IClawSettings.ts'
 import SettingsCard from '@/modules/settingsCard/SettingsCard.tsx'
-import {IInitialBall} from 'clawjs/dist/interfaces/InitialBall'
-import {IBall} from 'clawjs/dist/interfaces/Ball'
 import {Button} from '@/components/ui/button.tsx'
 import {Select, SelectContent, SelectItem, SelectTrigger} from '@/components/ui/select'
 import react from '../public/img.png'
+import {IInitialBall} from 'claw-machine-js/dist/interfaces/InitialBall'
+import {IBall} from 'claw-machine-js/dist/interfaces/Ball'
+import {ClawMachine} from 'claw-machine-js'
+import {ClawMachineCommands} from 'claw-machine-js/dist/ClawMachine'
 
 function App() {
 	const initialState: IInitialBall[] = [
@@ -60,7 +60,7 @@ function App() {
 
 	const handleMoveClawDown = async () => {
 		if (clawMachineRef.current) {
-			clawMachineRef.current.moveClawDown()
+			await clawMachineRef.current.moveClawDown()
 		}
 	}
 
@@ -76,7 +76,7 @@ function App() {
 	return (
 		<div className={'flex  flex-col md:flex-row w-full h-screen'}>
 			<div className={'flex flex-col w-full h-screen'}>
-				<div className={'text-3xl md:text-6xl font-bold m-1'}>Claw JS - Demo</div>
+				<div className={'text-3xl md:text-6xl font-bold m-1'}>Claw Machine JS - Demo</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
 						alreadyDroppedBalls={alreadyDroppedBalls}

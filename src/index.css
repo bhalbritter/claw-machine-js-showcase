@@ -9,6 +9,12 @@ body {
 	overflow-y: hidden;
 }
 
+@media (max-width: 768px) {
+	body {
+		overflow-y: scroll;
+	}
+}
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;

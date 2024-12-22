@@ -15,7 +15,7 @@ interface SettingsCardProps {
 
 function SettingsCard({clawSettings, balls, setBalls, setClawSettings}: SettingsCardProps) {
 	return (
-		<Accordion type="multiple">
+		<Accordion className={'w-full'} type="multiple">
 			<GeneralSettings clawSettings={clawSettings} setClawSettings={setClawSettings} />
 			<BallsSettings
 				balls={balls}

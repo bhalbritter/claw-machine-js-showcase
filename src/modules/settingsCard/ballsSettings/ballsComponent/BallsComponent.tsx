@@ -1,4 +1,4 @@
-import {Popover, PopoverContent, PopoverTrigger} from '@/components/ui/popover.tsx'
+import {AlertDialog, AlertDialogContent, AlertDialogTrigger} from '@/components/ui/alert-dialog'
 import {Input} from '@/components/ui/input.tsx'
 import {Label} from '@/components/ui/label.tsx'
 import {useState} from 'react'
@@ -11,6 +11,7 @@ interface BallsComponentProps {
 }
 
 function BallsComponent({balls, setBalls}: BallsComponentProps) {
+	const [isBallCreateDialogOpen, setIsBallCreateDialogOpen] = useState(false)
 	const [currentBall, setCurrentBall] = useState<IInitialBall>({
 		text: '',
 		startX: undefined,
@@ -20,6 +21,7 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 	})
 
 	const handleAddBall = () => {
+		setIsBallCreateDialogOpen(false)
 		setBalls(balls.concat(currentBall))
 	}
 
@@ -90,20 +92,23 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 					)
 				})}
 			</div>
-			<Popover>
+
+			<AlertDialog open={isBallCreateDialogOpen}>
 				<div className={'mt-2.5 flex justify-between mr-2.5'}>
 					<div className={'cursor-pointer'} onClick={() => handleAddRandomBalls()}>
 						Add 5 Random Balls
 					</div>
-					<PopoverTrigger>
+					<AlertDialogTrigger onClick={() => setIsBallCreateDialogOpen(true)}>
 						<div>+ Add a Ball</div>
-					</PopoverTrigger>
+					</AlertDialogTrigger>
 				</div>
-
-				<PopoverContent>
+				<AlertDialogContent>
 					<div className="grid gap-4">
 						<div className="space-y-2">
-							<h4 className="font-medium leading-none">Create Ball</h4>
+							<div className={'flex justify-between'}>
+								<h4 className="font-medium leading-none">Create Ball</h4>
+								<div onClick={() => setIsBallCreateDialogOpen(false)}>X</div>
+							</div>
 							<p className="text-sm text-muted-foreground">
 								Create a new Ball. If you enter nothing, a random value will be chosen instead
 							</p>
@@ -182,8 +187,8 @@ function BallsComponent({balls, setBalls}: BallsComponentProps) {
 							<Button onClick={() => handleAddBall()}>Add</Button>
 						</div>
 					</div>
-				</PopoverContent>
-			</Popover>
+				</AlertDialogContent>
+			</AlertDialog>
 		</div>
 	)
 }

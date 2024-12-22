@@ -8,6 +8,8 @@ import {IInitialBall} from 'claw-machine-js/dist/interfaces/InitialBall'
 import {IBall} from 'claw-machine-js/dist/interfaces/Ball'
 import {ClawMachine} from 'claw-machine-js'
 import {ClawMachineCommands} from 'claw-machine-js/dist/ClawMachine'
+import SettingsDrawer from '@/modules/settingsCard/SettingsDrawer.tsx'
+import reloadIcon from '../public/reload-outline.svg'
 
 function App() {
 	const initialState: IInitialBall[] = [
@@ -74,9 +76,9 @@ function App() {
 	}
 
 	return (
-		<div className={'flex  flex-col md:flex-row w-full h-screen'}>
-			<div className={'flex flex-col w-full h-screen'}>
-				<div className={'text-3xl md:text-6xl font-bold m-1'}>Claw Machine JS - Demo</div>
+		<div className={'flex flex-row w-full h-dvh'}>
+			<div className={'flex flex-col w-full h-dvh'}>
+				<div className={'flex text-3xl md:text-6xl font-bold m-1'}>Claw Machine JS - Demo</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
 						alreadyDroppedBalls={alreadyDroppedBalls}
@@ -102,7 +104,7 @@ function App() {
 						dividerLineFillColor={clawSettings.dividerLineFillColor}
 					/>
 				</div>
-				<div className={'flex m-2'}>
+				<div className={'md:flex m-2 hidden'}>
 					<Button onClick={() => handleReset()}>Reset dropped balls</Button>
 					<div className={'w-full flex justify-center gap-2'}>
 						<Button
@@ -138,8 +140,40 @@ function App() {
 						</SelectContent>
 					</Select>
 				</div>
+				<div className={'flex md:hidden justify-around align-middle mb-8'}>
+					<div className={'flex p-2 rounded-full'} onClick={() => handleReset()}>
+						<img className={'w-8'} alt={'wrenchIcon'} src={reloadIcon} />
+					</div>
+					<div className={'p-4 bg-white shadow-lg rounded-lg border border-gray-200 flex gap-5'}>
+						<Button
+							onMouseDown={() => handleMoveClawLeft()}
+							onTouchStart={() => handleMoveClawLeft()}
+							onTouchEnd={() => handleStopMoving()}
+							onMouseUp={() => handleStopMoving()}
+							onMouseLeave={() => handleStopMoving()}
+						>
+							Left
+						</Button>
+						<Button
+							onMouseDown={() => handleMoveClawRight()}
+							onTouchStart={() => handleMoveClawRight()}
+							onTouchEnd={() => handleStopMoving()}
+							onMouseUp={() => handleStopMoving()}
+							onMouseLeave={() => handleStopMoving()}
+						>
+							Right
+						</Button>
+						<Button onClick={() => handleMoveClawDown()}>Go</Button>
+					</div>
+					<SettingsDrawer
+						clawSettings={clawSettings}
+						balls={balls}
+						setBalls={setBalls}
+						setClawSettings={setClawSettings}
+					/>
+				</div>
 			</div>
-			<div className={'m-1 md:m-0 md:w-1/4 overflow-scroll'}>
+			<div className={'hidden md:flex m-1 md:m-0 md:w-1/4 overflow-scroll'}>
 				<SettingsCard
 					clawSettings={clawSettings}
 					balls={balls}

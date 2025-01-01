@@ -78,7 +78,7 @@ function App() {
 	return (
 		<div className={'flex flex-row w-full h-dvh'}>
 			<div className={'flex flex-col w-full h-dvh'}>
-				<div className={'flex text-3xl md:text-6xl font-bold m-1'}>Claw Machine JS - Demo</div>
+				<div className={'flex text-3xl md:text-6xl font-bold m-1'}>Claw Machine JS v1.0.4 - Demo</div>
 				<div className={'flex justify-center items-center h-full'}>
 					<ClawMachine
 						alreadyDroppedBalls={alreadyDroppedBalls}
